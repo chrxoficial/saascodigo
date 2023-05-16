@@ -36,14 +36,14 @@ const DeleteWhatsAppMessage = async (messageId: string): Promise<Message> => {
     }
 
     if (wbot.type === "md") {
-      const menssageDelete = messageToDelete as Message;
+      const messageDelete = messageToDelete as Message;
 
-      await (wbot as WASocket).sendMessage(menssageDelete.remoteJid, {
+      await (wbot as WASocket).sendMessage(messageDelete.remoteJid, {
         delete: {
-          id: menssageDelete.id,
-          remoteJid: menssageDelete.remoteJid,
-          participant: menssageDelete.participant,
-          fromMe: menssageDelete.fromMe
+          id: messageDelete.id,
+          remoteJid: messageDelete.remoteJid,
+          participant: messageDelete.participant,
+          fromMe: messageDelete.fromMe
         }
       });
     }
